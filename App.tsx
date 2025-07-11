@@ -1,20 +1,19 @@
+// App.tsx
+
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import DiarioNavigator from './src/navigation/DiarioNavigator'; // Assumindo que você criou este arquivo
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
 
-export default function App() {
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      {/* O StatusBar do expo é um pouco diferente */}
+      <StatusBar style="light" backgroundColor="#1A1A2E" />
+      <DiarioNavigator />
+    </NavigationContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
+
